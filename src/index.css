@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Inter:wght@400;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-studio-blue: #3b82f6;
+  --color-studio-gold: #facc15;
+  --color-studio-danger: #ef4444;
+  --color-studio-bg: #0f172a;
+  --color-studio-dark: #020617;
+  --color-slate-400: #94a3b8;
+  --color-slate-200: #e2e8f0;
+}
+
+@layer base {
+  body {
+    @apply bg-studio-bg text-slate-200 font-sans selection:bg-studio-gold selection:text-black overflow-hidden;
+  }
+}
+
+@layer components {
+  .studio-floor {
+    background: radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 80%);
+  }
+  
+  .tv-header {
+    @apply h-20 bg-studio-bg/90 backdrop-blur-md border-b-2 border-studio-blue flex items-center px-10 justify-between z-50;
+  }
+
+  .question-area {
+    @apply h-[250px] bg-linear-to-t from-studio-bg to-[#1e293b] border-t-4 border-studio-blue flex flex-col items-center justify-center p-5 z-50;
+  }
+
+  .slot {
+    @apply w-10 h-12 md:w-12 md:h-16 border-2 border-studio-blue rounded-lg flex items-center justify-center text-3xl md:text-4xl font-bold bg-studio-blue/10 transition-all duration-300;
+  }
+
+  .slot-filled {
+    @apply bg-studio-blue text-white shadow-[0_0_15px_rgba(59,130,246,0.5)];
+  }
+
+  .neon-gold {
+    text-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+  }
+}
+
